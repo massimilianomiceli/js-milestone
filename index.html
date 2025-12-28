@@ -7,16 +7,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-    <main class="container">
+    <main class="container vh-100 d-flex justify-content-center align-items-center">
         <section class="row">
             <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
+                <div class="card mb-4">
+                    <div class="card-header bg-danger text-light">
                         Acquista il tuo biglietto
                     </div>
                     <div class="card-body">
                         <form>
-                            <section class="row">
+                            <section class="row mb-4">
+                                <div class="col-4">
+                                    <label for="passengerName" class="form-label">Nome e cognome:</label>
+                                    <input type="text" class="form-control" id="passengerName" placeholder="Inserisci nome e cognome del passeggero" minlength="1" maxlength="30">
+                                </div>
                                 <div class="col-4">
                                     <label for="numberKm" class="form-label">km da percorrere:</label>
                                     <input type="number" class="form-control" id="numberKm" placeholder="Inserisci il numero di km da percorrere" min="1" max="10000">
@@ -25,8 +29,10 @@
                                     <label for="numberAge" class="form-label">Etá del passeggero:</label>
                                     <input type="number" class="form-control" id="numberAge" placeholder="Inserisci l'etá del passeggero" min="1" max="100">
                                 </div>
-                                <div class="col-4">
-                                    <button type="submit" class="btn btn-primary" id="btnTotal">Aggiungi al totale</button>
+                            </section>
+                            <section class="row">
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-secondary" id="btnTotal">Aggiungi al totale</button>
                                 </div>
                             </section>
                         </form>
@@ -34,14 +40,15 @@
                 </div>
             </div>
             <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
+                <div class="card d-none" id="summary">
+                    <div class="card-header bg-danger text-light">
                         Riepilogo del tuo ordine
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table text-center">
                         <thead>
                             <tr>
+                            <th>Nome e cognome</th>
                             <th>km</th>
                             <th>Etá</th>
                             <th>Importo</th>
@@ -51,7 +58,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                            <td colspan="2" class="text-end">Totale:</td>
+                            <td colspan="3" class="text-end">Totale:</td>
                             <td id="tableTotal"></td>
                             </tr>
                         </tfoot>
