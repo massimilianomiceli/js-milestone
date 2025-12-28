@@ -2,12 +2,28 @@ const numberKmInputElement = document.getElementById("numberKm");
 const numberAgeElement = document.getElementById("numberAge");
 const btnTotalElement = document.getElementById("btnTotal");
 const formElement = document.querySelector("form");
-
+const tbodyElement = document.querySelector("tbody");
+const tableTotal = document.getElementById("tableTotal");
+var total = 0;
 
 formElement.addEventListener("submit", function(event){
     event.preventDefault();
-    const totale = ticketPrice(numberKmInputElement.value, numberAgeElement.value)
-    console.log(totale);
+
+    const newTdKmElement = document.createElement("td");
+    newTdKmElement.textContent = numberKmInputElement.value;
+    const newTdAgeElement = document.createElement("td");
+    newTdAgeElement.textContent = numberAgeElement.value;
+    const newTdTotalElement = document.createElement("td");
+    newTdTotalElement.textContent = ticketPrice(numberKmInputElement.value, numberAgeElement.value).toFixed(2);
+
+    const newTrElement = document.createElement("tr");
+    newTrElement.append(newTdKmElement, newTdAgeElement, newTdTotalElement);
+
+    tbodyElement.append(newTrElement);
+    
+    total += ticketPrice(parseFloat(numberKmInputElement.value), parseFloat(numberAgeElement.value));
+
+    tableTotal.textContent = (total).toFixed(2);
 })
 
 function ticketPrice (km, age){

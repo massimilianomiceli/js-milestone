@@ -9,22 +9,55 @@
 <body>
     <main class="container">
         <section class="row">
-            <div class="col-6">
-                <form>
-                    <section class="row">
-                        <div class="col-4">
-                            <label for="numberKm" class="form-label">km da percorrere:</label>
-                            <input type="number" class="form-control" id="numberKm" placeholder="Inserisci il numero di km da percorrere" min="1" max="10000">
-                        </div>
-                        <div class="col-4">
-                            <label for="numberAge" class="form-label">Etá del passeggero:</label>
-                            <input type="number" class="form-control" id="numberAge" placeholder="Inserisci l'etá del passeggero" min="1" max="100">
-                        </div>
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-primary" id="btnTotal">Prezzo totale</button>
-                        </div>
-                    </section>
-                </form>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        Acquista il tuo biglietto
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <section class="row">
+                                <div class="col-4">
+                                    <label for="numberKm" class="form-label">km da percorrere:</label>
+                                    <input type="number" class="form-control" id="numberKm" placeholder="Inserisci il numero di km da percorrere" min="1" max="10000">
+                                </div>
+                                <div class="col-4">
+                                    <label for="numberAge" class="form-label">Etá del passeggero:</label>
+                                    <input type="number" class="form-control" id="numberAge" placeholder="Inserisci l'etá del passeggero" min="1" max="100">
+                                </div>
+                                <div class="col-4">
+                                    <button type="submit" class="btn btn-primary" id="btnTotal">Aggiungi al totale</button>
+                                </div>
+                            </section>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        Riepilogo del tuo ordine
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                        <thead>
+                            <tr>
+                            <th>km</th>
+                            <th>Etá</th>
+                            <th>Importo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                            <td colspan="2" class="text-end">Totale:</td>
+                            <td id="tableTotal"></td>
+                            </tr>
+                        </tfoot>
+                        </table>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
