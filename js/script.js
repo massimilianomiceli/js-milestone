@@ -6,7 +6,7 @@ const formElement = document.querySelector("form");
 const tbodyElement = document.querySelector("tbody");
 const tableTotalElement = document.getElementById("tableTotal");
 const summaryCardElement = document.getElementById("summary");
-var total = 0;
+let total = 0;
 
 formElement.addEventListener("submit", function(event){
     event.preventDefault();
